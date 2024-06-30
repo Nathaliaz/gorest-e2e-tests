@@ -1,5 +1,5 @@
 const { createUser } = require('../utils/apiClient');
-const { user, userNameEmpty, userMailInvalid, userMailRepeated, userGenderInvalid, userStatusInvalid, userWrongName } = require('../utils/testData');
+const { user, userNameEmpty, userMailInvalid, userGenderInvalid, userStatusInvalid, userWrongName, anotherUser } = require('../utils/testData');
 
 describe('Create User To Test Email ', () => {
   let userWithRepeatEmail;
@@ -10,10 +10,10 @@ describe('Create User To Test Email ', () => {
   });
 
   it('should create a user successfully, check the field name and check that all the field are not empty', async () => {
-    const response = await createUser(user);
+    const response = await createUser(anotherUser);
+    console.log("the response from create user is: ", response.body)
     expect(response.status).toBe(201);
-    console.log("the response is: ", response.body)
-    expect(response.body.name).toBe(user.name)
+    expect(response.body.name).toBe(anotherUser.name)
     expect(response.body).not.toBe(null)
   });
 

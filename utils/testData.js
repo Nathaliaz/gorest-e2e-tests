@@ -4,6 +4,13 @@ const user = {
     email: `john.deer.${Date.now()}@example.com`, //to no repeat the email
     status: 'active',
   };
+
+  const anotherUser = {
+    name: 'John Deerjr',
+    gender: 'male',
+    email: `john.deer.jr${Date.now()}@example.com`, //to no repeat the email
+    status: 'active',
+  };
   
   const userNameEmpty = {
     name: null,
@@ -47,5 +54,5 @@ const user = {
     status: '23', //we don't know which type of status is correct
   };
 
-  module.exports = { user, userNameEmpty, userWrongName, userMailInvalid, userMailRepeated, userGenderInvalid, userStatusInvalid };
+  module.exports = { user, anotherUser, userNameEmpty, userWrongName, userMailInvalid, userMailRepeated, userGenderInvalid, userStatusInvalid };
   
